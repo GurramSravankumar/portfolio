@@ -1,0 +1,87 @@
+
+.skills {
+  padding-top: 50px;
+  text-align: center;
+}
+
+
+.skills-title {
+  font-size: 30px;
+    font-weight: bold;
+    color: #030303;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    align-items: top; 
+  letter-spacing: 1px;
+}
+
+
+.filter-buttons {
+  margin-bottom: 50px;
+}
+
+.filter-buttons button {
+  margin: 0 15px;
+  padding: 8px 18px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.filter-buttons button:hover {
+  color: #6c63ff;
+}
+
+.filter-buttons button.active {
+  color: #6c63ff;
+  border-bottom: 2px solid #6c63ff;
+}
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.skill-card {
+  width: 180px;
+  height: 160px;
+  background: rgb(247, 245, 245);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+.skill-icon {
+  font-size: 45px;
+  color: #6c63ff;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+}
+
+
+.skill-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #080808;
+}
