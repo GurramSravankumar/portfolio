@@ -11,7 +11,7 @@ function useHeaderTransition(homeId = "home") {
 
       const rect = home.getBoundingClientRect();
 
-      if (rect.bottom <= 80) {
+      if (rect.bottom <= 40) {
         setShowImageHeader(true);
       } else {
         setShowImageHeader(false);
