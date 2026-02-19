@@ -1,100 +1,168 @@
 .home-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 80vh;
+
+  margin-top: 120px; /* ADD THIS */
 }
 
-p{
-    width: 500px;
-    line-height: 1.5;
-    text-align: center;
-    font-size: large;
-    font-weight: 500;
+p {
+  width: 500px;
+  line-height: 1.5;
+  text-align: center;
+  font-size: large;
+  font-weight: 500;
 }
-h1{
-    font-size: 3rem;
-    margin-bottom: 20px;
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
-h2{
-    font-size: 2rem;
-    margin-bottom: 20px;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 .text-container {
-    align-items: center;
-   
+  align-items: center;
 }
-.home-btn{
-    padding: 7px 18px;
-    background-color: #e6ded5;
-    color: #3e3a36;
-    border: 1px solid #bfa58a;
-    border-radius: 6px;
-    margin-right: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(120, 98, 75, 0.25);
-    transition: all 0.3s ease;
-}
-
-.home-btn:hover{
-    background-color: #bfa58a;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(120, 98, 75, 0.4);
-    transform: translateY(-3px);
+.home-btn {
+  padding: 7px 18px;
+  background-color: #e6ded5;
+  color: #3e3a36;
+  border: 1px solid #bfa58a;
+  border-radius: 6px;
+  margin-right: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(120, 98, 75, 0.25);
+  transition: all 0.3s ease;
 }
 
-.home-btn:active{
-    background-color: #8c6f54;
-    color: #ffffff;
-    transform: translateY(0);
+.home-btn:hover {
+  background-color: #bfa58a;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(120, 98, 75, 0.4);
+  transform: translateY(-3px);
 }
 
-.btn-container{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.home-btn:active {
+  background-color: #8c6f54;
+  color: #ffffff;
+  transform: translateY(0);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 .image-container {
-    height: 250px;
-    width: 250px;
-    border: 7px solid rgb(61, 67, 72)  ;
-    border-radius: 50%;
-    margin-left: 50px;
-    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.3);
-
+  height: 250px;
+  width: 250px;
+  border: 7px solid rgb(61, 67, 72);
+  border-radius: 50%;
+  margin-left: 50px;
+  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.3);
 }
 .image-container img {
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
+.typing {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  display: inline-block;
 
-.typing{
-    font-size: 3rem;
-    margin-bottom: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid black;
-    display: inline-block;
-
-    width: 0;
-    animation: typing 3s steps(17, end) forwards, blink 0.7s infinite;
+  width: 0;
+  animation:
+    typing 3s steps(17, end) forwards,
+    blink 0.7s infinite;
 }
 
 @keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 21ch;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 21ch;
+  }
 }
 
 @keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+
+    margin-top: 100px;
+    min-height: auto;
+  }
+
+  p {
+    width: 80%;
+    margin: auto;
+  }
+
+  .image-container {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+
+    margin-top: 100px;
+    min-height: auto;
+
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  p {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-btn {
+    margin: 10px 0;
+    width: 200px;
+  }
+
+  .image-container {
+    height: 180px;
+    width: 180px;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .typing {
+    font-size: 1.8rem;
+  }
 }

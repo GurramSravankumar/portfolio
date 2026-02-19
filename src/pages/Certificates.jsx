@@ -1,26 +1,20 @@
-import { useState, useEffect } from "react";
 import "../styles/Certificates.css";
 
 import cert1 from "../assets/hakerRank.png";
 import cert2 from "../assets/pentagon.png";
 
+import useCertificateSlider from "../customeHooks/useCertificateSlider";
+
 function Certifications() {
   const certificates = [cert1, cert2];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  useEffect(() => {
-    if (selectedImage) return; 
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) =>
-        prev === certificates.length - 1 ? 0 : prev + 1
-      );
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [selectedImage]);
+  const {
+    currentIndex,
+    selectedImage,
+    openImage,
+    closeImage,
+    goToSlide,
+  } = useCertificateSlider(certificates);
 
   return (
     <section className="certifications" id="certificates">
@@ -35,11 +29,7 @@ function Certifications() {
         >
           {certificates.map((img, index) => (
             <div className="slide" key={index}>
-              <img
-                src={img}
-                alt="certificate"
-                onClick={() => setSelectedImage(img)}
-              />
+              <img src={img} alt="certificate" onClick={() => openImage(img)} />
             </div>
           ))}
         </div>
@@ -50,19 +40,17 @@ function Certifications() {
           <span
             key={index}
             className={currentIndex === index ? "active-dot" : ""}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goToSlide(index)}
           ></span>
         ))}
       </div>
 
       {selectedImage && (
         <div className="modal">
-          <button
-            className="back-btn"
-            onClick={() => setSelectedImage(null)}
-          >
+          <button className="back-btn" onClick={closeImage}>
             ← Back
           </button>
+
           <img src={selectedImage} alt="Large Certificate" />
         </div>
       )}

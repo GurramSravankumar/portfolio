@@ -1,39 +1,29 @@
 import { useState, useEffect } from "react";
 
-function useHeaderTransition(homeId = "home", triggerPercent = 0.85){
+function useHeaderTransition(homeId = "home") {
+  const [showImageHeader, setShowImageHeader] = useState(false);
 
-    const [showImageHeader, setShowImageHeader] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const home = document.getElementById(homeId);
 
-    useEffect(() => {
+      if (!home) return;
 
-        const handleScroll = () => {
+      const rect = home.getBoundingClientRect();
 
-            const home = document.getElementById(homeId);
+      if (rect.bottom <= 80) {
+        setShowImageHeader(true);
+      } else {
+        setShowImageHeader(false);
+      }
+    };
 
-            if(!home) return;
+    window.addEventListener("scroll", handleScroll);
 
-            const triggerPoint = home.offsetHeight * triggerPercent;
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [homeId]);
 
-            if(window.scrollY >= triggerPoint){
-
-                setShowImageHeader(true);
-
-            }else{
-
-                setShowImageHeader(false);
-
-            }
-
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-
-    }, [homeId, triggerPercent]);
-
-    return showImageHeader;
-
+  return showImageHeader;
 }
 
 export default useHeaderTransition;
