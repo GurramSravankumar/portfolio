@@ -38,7 +38,7 @@ function Contact() {
           <span>LinkedIn Profile</span>
         </a>
 
-        <a href="https://github.com/sravan65411" target="_blank" rel="noreferrer" className="contact-card">
+        <a href="https://github.com/GurramSravankumar" target="_blank" rel="noreferrer" className="contact-card">
           <FaGithub className="contact-icon" />
           <span>GitHub Profile</span>
         </a>
