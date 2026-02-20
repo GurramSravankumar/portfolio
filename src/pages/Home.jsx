@@ -14,7 +14,7 @@ function Home() {
 
                 <div className='btn-container'>
                         <button className='home-btn' onClick={() => scrollToSection("contact")}>HERE ME</button>
-                        <a href="/Resume.pdf"download>
+                        <a href="/portfolio/Sravan.pdf"download>
                             <button className="home-btn">
                                 Download Resume
                             </button>

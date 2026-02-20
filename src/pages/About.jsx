@@ -22,7 +22,7 @@ function About() {
                         backend systems, I focus on writing clean, maintainable code and continuously 
                         improving my technical skills. 
                     </p> 
-                    <a href="/Resume.pdf" download>
+                    <a href="/portfolio/Sravan.pdf" download>
                             <button className="about-btn">
                                 Download CV
                             </button>
